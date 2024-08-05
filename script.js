@@ -2,11 +2,14 @@
 const aboutBtn = document.querySelector(".AboutSection")
 const PortfolioBtn = document.querySelector(".PortfolioBtn")
 const contactBtn = document.querySelector(".contactBtn")
+const showmycontent1 = document.querySelector("#mycontent1")
+const showmycontent2 = document.querySelector("#mycontent2")
 
 // sections
 const aboutSection = document.querySelector(".InfoAbout")
 const PortfolioSection = document.querySelector(".InfoPortofolio")
 const contactSection = document.querySelector(".InfoContact")
+const aboutaside = document.querySelector(".About")
 
 // functions
 const elementToggleFunc = function (elem) {elem.classList.toggle("active");}
@@ -31,28 +34,22 @@ PortfolioBtn.addEventListener("click", () => {
 })
 
 contactBtn.addEventListener("click", () => {
-  elementToggleFunc(contactSection);
-  elementRemoveFunc(aboutSection);
-  elementRemoveFunc(PortfolioSection);
-  aboutBtn.disabled = false
-  PortfolioBtn.disabled = false
-  contactBtn.disabled = true
+    elementToggleFunc(contactSection);
+    elementRemoveFunc(aboutSection);
+    elementRemoveFunc(PortfolioSection);
+    aboutBtn.disabled = false
+    PortfolioBtn.disabled = false
+    contactBtn.disabled = true
 })
 
-// contact form adjust
-const form = document.querySelector("form")
-const submitBtn = document.querySelector(".SubmitForm")
-const Msg = document.querySelector("textarea")
-const email = document.querySelector("input[type=email]")
-const tel = document.querySelector("input[type=tel]")
-const firstName = document.querySelector("#firstName")
-const secondName = document.querySelector("#secondName")
-
-form.addEventListener("submit",(e) => {
-  e.preventDefault()
+showmycontent1.addEventListener("click", () => { 
+    aboutaside.style.display = "inline"
+    showmycontent1.style.display = "none"
+    showmycontent2.style.display = "inline"
 })
-submitBtn.addEventListener("click", () => {
-  window.open(`
-    https://api.whatsapp.com/send?phone=+2001225073533&text=Name: ${firstName.value} ${secondName.value}, Email: ${email.value},tel: ${tel.value}, ${Msg.value}
-  `)
+
+showmycontent2.addEventListener("click", () => {
+    aboutaside.style.display = "none"
+    showmycontent1.style.display = "inline"
+    showmycontent2.style.display = "none"
 })
