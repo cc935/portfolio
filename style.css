@@ -72,6 +72,7 @@ article:where(article.active) {
   padding: 0;
   box-sizing: border-box;
   font-family: var(--ff-poppins);
+  transition: 1s ease;
 }
 
 ::-webkit-scrollbar {
@@ -122,7 +123,6 @@ body {
 
 main {
   display: flex;
-  justify-content: flex-start;
   margin: 60px;
   gap: 15px;
 }
@@ -146,12 +146,24 @@ aside {
   flex-direction: column;
 }
 
+.mycontent {
+  position: absolute;
+  top:0;
+  right:0;
+  border-radius: 0px 20px 0px 20px;
+  border:1px solid #FFDB70;
+  background: transparent;
+  padding:15px;
+  color:#fff;
+  cursor:pointer;
+  display:none
+}
+
 figure {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-bottom: 20px;
 }
 
 figcaption {
@@ -190,10 +202,6 @@ figcaption {
   font-size: var(--fs-9);
   background: #2b2b2c;
   border-radius: 8px;
-}
-
-.About {
-  margin-top: 15px;
 }
 
 .contacts-list {
@@ -280,9 +288,13 @@ nav button {
   transition: var(--transition-1);
 }
 
+nav button:disabled {
+  font-size:15px;
+  text-shadow: 0px 0px 50px red;
+}
+
 nav button:hover {
-  position: relative;
-  scale: 1.1;
+  scale: 1.2;
   text-shadow: 0px 0px 20px #fff;
 }
 
@@ -347,6 +359,7 @@ nav button:hover {
   padding:20px;
   border-radius:20px;
   position:relative;
+  cursor:pointer;
 }
 
 .images {
@@ -369,8 +382,6 @@ nav button:hover {
 .contents h1 {
   margin:0px 0px 24px 97px;
 }
-
-/* My Works Section */
 
 /* contact section */
 form {
@@ -445,62 +456,117 @@ textarea {
   margin-top: 20px;
 }
 
-@media screen and (max-width:1024px) {
-  /* main section */
+@media screen and (max-width:1136px) {
   main {
-    margin: 60px 20px 20px 20px;
-    flex-direction:column;
+    flex-direction: column;
+    margin:20px 30px 30px 30px;
+    gap:80px;
   }
 
   /* aside */
   aside {
-    position: static;
-    height:max-content;
     width:100%;
-    margin-top:20px;
-    padding:20px;
+    height:max-content;
+    position:relative;
+    padding: 40px 10px 10px 10px;
   }
-
-  figure {
-    display:flex;
-    flex-direction: row;
-    margin:0;
-    height:max-content
-  }
-
   .image {
-    position:static;
-    margin:0 10px 0 0;
+    position: static;
+    margin:0;
+    margin-right:20px;
   }
-
   .About {
-    display:none;
+    display:none
   }
-
+  figure {
+    flex-direction:row;
+    justify-content: space-between;
+    padding:0;
+    margin:0;
+  }
+  .captions {
+    font-size:10px;
+  }
+  .Info {
+    position:static
+  }
+  .mycontent {
+    display:inline;
+  }
+  .NickName {
+    font-size:10px;
+    margin:0;
+    padding:10px 20px;
+    width:max-content
+  }
+  .Name {
+    font-size:20px;
+  }
+  .About {
+    width:100%;
+    margin:0px;
+  }
   /* navbar */
   nav {
-    width: 100vw;
-    height: max-content;
-    position: fixed;
-    background: var(--bg-gradient-yellow-2);
-    bottom: 0px;
-    left: 50%;
+    position: absolute;
+    top:0;
+    left:50%;
     translate: -50%;
+    width:100%;
     border-radius: 0px 0px 10px 10px;
-    z-index: 999;
+    background:var(--bg-gradient-yellow-2)
   }
 
-  /* About Section */
+  /* doing and peoples cards */
   .cards,.peoples {
     grid-template-columns: repeat(1,1fr);
+    gap:40px
   }
-  .people2 {
-    margin-top:20px;
-  }
-}
 
-@media screen and (max-width:500px) {
-  .Certificates img{
-    width:150px;
+  .webdevelopment {
+    flex-direction: column;
+  }
+
+  .webdevelopment h1 {
+    text-align: center;
+  }
+
+  .webdevelopment p {
+    text-align: center;
+  }
+
+  .contents h1 {
+    margin:0px;
+  }
+
+  .images {
+    position: static;
+    margin-bottom: 10px;
+  }
+
+  /* Certifications */
+  .Certificates {
+    flex-direction:column;
+    gap:50px;
+  }
+
+  /* contact */
+  .formBtn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:20px;
+    flex-direction: column;
+  }
+  .formBtn h1 {
+    font-size:16px;
+    align-self: flex-start;
+  }
+  .formBtn button {
+    align-self:flex-end
+  }
+
+  .UserInfo {
+    grid-template-columns: repeat(1,1fr);
   }
 }
