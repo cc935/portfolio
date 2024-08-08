@@ -1,0 +1,1 @@
+setTimeout(() => { location.href = "portofolio.html" }, 4000)
