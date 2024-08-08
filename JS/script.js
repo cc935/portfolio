@@ -115,8 +115,8 @@ const name1 = document.querySelector("input[type=text]:nth-child(1)")
 const name2 = document.querySelector("input[type=text]:nth-child(2)")
 
 form.addEventListener("submit", () => {
-  const text = `Name: ${name1.value} ${name2.value}, Email: ${Email.value}, ${Text.value}`;
-  const phone = PhoneNumer.value;
+  const text = `Name: ${name1.value} ${name2.value}, Email: ${Email.value}, Phone Number: ${PhoneNumer.value} ${Text.value}`;
+  const phone = "01225073533";
   const url = `https://api.whatsapp.com/send?phone=+20${phone}&text=${text}`
   window.open(url, '_blank');
 })
