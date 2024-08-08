@@ -1,0 +1,28 @@
+* {
+    margin:0;
+    padding:0;
+    overflow: hidden;
+}
+
+body {
+    height: 100vh;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper {
+    height:100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* margin-top: -100px; */
+}
+
+h1 {
+    color:white;
+    font-weight: 600;
+}
